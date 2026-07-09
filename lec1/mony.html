@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense App</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="bg-gray-100">
+
+
+<nav class="bg-gray-900 text-white px-8 py-4 flex justify-between items-center">
+
+    <h1 class="text-2xl font-bold">
+        Expense App
+    </h1>
+
+
+    <a href="index.html" class="hover:text-blue-400 transition">
+
+        <i class="fa-solid fa-house"></i>
+        Home
+
+    </a>
+
+</nav>
+
+
+
+<section class="min-h-screen flex justify-center items-center px-6">
+
+
+<div class="bg-white max-w-2xl w-full p-8 rounded-xl shadow-lg">
+
+
+<h2 class="text-3xl font-bold text-center mb-8">
+    Monthly Expenses
+</h2>
+
+
+
+<div class="grid md:grid-cols-2 gap-5">
+
+
+<div>
+
+<label class="font-bold">
+    Monthly Income
+</label>
+
+<input 
+id="income"
+type="number"
+placeholder="Enter your money"
+class="w-full border p-3 rounded-lg mt-2 outline-none">
+
+</div>
+
+
+
+<div>
+
+<label class="font-bold">
+    Expense Amount
+</label>
+
+<input 
+id="expense"
+type="number"
+placeholder="Enter expense"
+class="w-full border p-3 rounded-lg mt-2 outline-none">
+
+</div>
+
+
+</div>
+
+
+
+
+<button 
+id="calculateBtn"
+class="mt-6 w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
+
+<i class="fa-solid fa-calculator"></i>
+
+Calculate
+
+</button>
+
+
+
+
+<div class="mt-8 grid md:grid-cols-3 gap-4 text-center">
+
+
+<div class="bg-green-100 p-5 rounded-lg">
+
+<h3 class="font-bold">
+Income
+</h3>
+
+<p id="showIncome" class="text-2xl mt-2">
+0
+</p>
+
+</div>
+
+
+
+<div class="bg-blue-100 p-5 rounded-lg">
+
+<h3 class="font-bold">
+Spent
+</h3>
+
+<p id="showExpense" class="text-2xl mt-2">
+0
+</p>
+
+</div>
+
+
+
+<div id="resultBox" class="bg-gray-100 p-5 rounded-lg">
+
+<h3 class="font-bold">
+Remaining
+</h3>
+
+<p id="remaining" class="text-2xl mt-2">
+0
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<p id="message" class="text-center mt-6 font-bold"></p>
+
+
+</div>
+
+
+</section>
+
+
+
+<script src="js/mony.js"></script>
+
+
+</body>
+
+</html>
