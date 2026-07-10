@@ -30,3 +30,15 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
 }
+#btn {
+   opacity:0;
+   visibility: hidden;
+  
+
+}
+#btn.show {
+
+    opacity:1;
+    visibility: visible;
+    transform: rotate(-360deg);
+}

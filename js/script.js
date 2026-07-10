@@ -1,15 +1,16 @@
-let topBtn = document.querySelector("#topBtn");
+let btn = document.querySelector("#btn");
 
 
 window.onscroll = function () {
+    console.log(window.scrollY);
 
-    if (window.scrollY > 300) {
+    if (window.scrollY > 800) {
 
-        topBtn.classList.add("show");
+        btn.classList.add("show");
 
     } else {
 
-        topBtn.classList.remove("show");
+        btn.classList.remove("show");
 
     }
 
@@ -17,9 +18,7 @@ window.onscroll = function () {
 
 
 
-topBtn.onclick = function (e) {
-
-    e.preventDefault();
+btn.onclick = function (e) {
 
     window.scrollTo({
 
@@ -60,3 +59,5 @@ let timer = setInterval(function () {
     }
 
 }, 1000);
+
+
