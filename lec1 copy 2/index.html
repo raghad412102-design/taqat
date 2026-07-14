@@ -1,34 +1,115 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Smart Shopping Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+   
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
- <form id="loginForm" class="space-y-5">
+
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+
+    <nav class="bg-gray-900 text-white px-8 py-4 flex justify-between items-center shadow-md sticky top-0 z-50">
+        <h1 class="text-2xl font-bold tracking-wide">Tech Store</h1>
+        <div class="flex items-center gap-6">
+            <ul class="flex gap-4 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+            </ul>
+            <div class="relative cursor-pointer py-1">
+                <i class="fa-solid fa-cart-shopping text-2xl text-blue-400 hover:text-blue-300 transition"></i>
+                <span id="cartCount" class="absolute -top-1 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+            </div>
+        </div>
+    </nav>
+<main class="flex-grow max-w-7xl w-full mx-auto px-6 py-10 grid grid-cols-12 gap-8 items-start">
+    
+    <aside class="col-span-12 md:col-span-4 lg:col-span-3 bg-white p-5 rounded-xl shadow-md border border-gray-200 sticky top-24">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Order Summary</h2>
+        
+        <div id="cartItemsList" class="space-y-3 max-h-60 overflow-y-auto mb-4 pr-1 text-xs text-gray-700">
+            <p id="emptyCartMessage" class="text-gray-400 text-center py-2 italic">The cart is empty</p>
+        </div>
+
+        <div class="space-y-3 border-t pt-3 text-sm">
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600 font-medium">Total Items:</span>
+                <span id="summaryCount" class="font-bold text-gray-900">0</span>
+            </div>
+            <div class="flex justify-between items-center border-t pt-3">
+                <span class="text-gray-600 font-medium">Total Price:</span>
+                <span class="text-base font-extrabold text-green-600">$<span id="totalPrice">0</span></span>
+            </div>
+        </div>
+
+        <button id="clearCartBtn" class="mt-5 w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 rounded-lg font-semibold text-xs transition flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-trash-can"></i> Clear Cart
+        </button>
+    </aside>
+
+    <section class="col-span-12 md:col-span-8 lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-xl transition duration-300">
+            <div class="h-44 bg-gray-100 overflow-hidden relative">
+                <img src="images/لابتوب.jpg" alt="Laptop" class="w-full h-full object-cover">
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
                 <div>
-                    <label id="t-pname-label" class="block text-gray-700 font-bold mb-2 text-right"></label>
-                    <input type="text" id="login-username" data-placeholder-ar="أدخل اسم  بالكامل" data-placeholder-en="Enter patient's full name" placeholder="أدخل اسم  بالكامل" required class="w-full p-4 border-2 rounded-xl focus:outline-none focus:border-teal-600 text-lg bg-white text-gray-900">
+                    <h3 class="product-name font-bold text-gray-800 text-base">Laptop Pro 15</h3>
+                    <p class="text-gray-500 text-xs mt-1 leading-relaxed">High performance laptop for coding and graphics.</p>
                 </div>
-                
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-lg font-bold text-gray-900">$<span class="product-price">999</span></span>
+                    <button class="add-to-cart-btn bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-plus text-[10px]"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-xl transition duration-300">
+            <div class="h-44 bg-gray-100 overflow-hidden relative">
+                <img src="images/[[[[.webp" alt="Smartphone" width="450" >
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
                 <div>
-                    <label id="t-pfee-label" class="block text-gray-700 font-bold mb-2 text-right"></label>
-                    <input type="number" id="login-fee" data-placeholder-ar="أدخل  معدل المادة" data-placeholder-en="Enter the paid amount" placeholder="أدخل معدل المادة" required class="w-full p-4 border-2 rounded-xl focus:outline-none focus:border-teal-600 text-lg bg-white text-gray-900">
+                    <h3 class="product-name font-bold text-gray-800 text-base">Smartphone X</h3>
+                    <p class="text-gray-500 text-xs mt-1 leading-relaxed">Stunning display and pure android experience.</p>
                 </div>
-                 <div>
-                    <label id="t-pfee-label" class="block text-gray-700 font-bold mb-2 text-right"></label>
-                    <input type="number" id="login-fee" data-placeholder-ar="أدخل  معدل المادة" data-placeholder-en="Enter the paid amount" placeholder="أدخل معدل المادة" required class="w-full p-4 border-2 rounded-xl focus:outline-none focus:border-teal-600 text-lg bg-white text-gray-900">
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-lg font-bold text-gray-900">$<span class="product-price">599</span></span>
+                    <button class="add-to-cart-btn bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-plus text-[10px]"></i> Add to Cart
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-xl transition duration-300">
+            <div class="h-44 bg-gray-100 overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Headphones" class="w-full h-full object-cover">
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
                 <div>
-                    <label id="t-pfee-label" class="block text-gray-700 font-bold mb-2 text-right"></label>
-                    <input type="number" id="login-fee" data-placeholder-ar="أدخل  معدل المادة" data-placeholder-en="Enter the paid amount" placeholder="أدخل معدل المادة" required class="w-full p-4 border-2 rounded-xl focus:outline-none focus:border-teal-600 text-lg bg-white text-gray-900">
+                    <h3 class="product-name font-bold text-gray-800 text-base">Wireless ANC Headphones</h3>
+                    <p class="text-gray-500 text-xs mt-1 leading-relaxed">Immersive active noise cancelling studio sound.</p>
                 </div>
-                <button type="submit" id="t-login-btn" class="w-full bg-teal-600 text-white py-4 rounded-xl font-bold text-xl hover:bg-teal-700 transition shadow-lg mt-4">+</button>
-                <button type="submit" id="t-cancel-btn" class="w-full bg-gray-500 text-white py-4 rounded-xl font-bold text-xl hover:bg-gray-600 transition shadow-lg mt-4">Calculate</button>
-            </form>
-<body>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-lg font-bold text-gray-900">$<span class="product-price">149</span></span>
+                    <button class="add-to-cart-btn bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-plus text-[10px]"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+    
+    
+
     <script src="js/script.js"></script>
 </body>
 </html>

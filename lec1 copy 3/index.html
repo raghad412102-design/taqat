@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصفوفة الملصقات التفاعلية - تيلويند</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes popIn {
+            0% { transform: translate(-50%, -50%) scale(0) rotate(-30deg); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.2) rotate(15deg); opacity: 1; }
+            100% { transform: translate(-50%, -100%) scale(1) rotate(0deg); opacity: 0; }
+        }
+        .floating-sticker {
+            position: absolute;
+            font-size: 2.5rem;
+            pointer-events: none;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 box-border bg-gradient-to-br from-slate-900 to-indigo-950 min-h-screen overflow-hidden relative flex justify-center items-center">
+
+    <button id="magicBtn" class="absolute z-10 px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-[0_10px_20px_rgba(168,85,247,0.4)] hover:scale-110 hover:shadow-[0_15px_30px_rgba(168,85,247,0.6)] active:scale-95 transition-all duration-300 cursor-pointer">
+        أظهر السحر ✨
+    </button>
+
+    <button id="hideBtn" class="absolute z-10 px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-rose-500 to-red-600 rounded-full shadow-[0_10px_20px_rgba(244,63,94,0.4)] hover:scale-110 hover:shadow-[0_15px_30px_rgba(244,63,94,0.6)] active:scale-95 transition-all duration-300 cursor-pointer hidden opacity-0">
+        إخفاء المصفوفة 🪄
+    </button>
+
+    <div id="matrixGrid" class="absolute top-0 left-0 w-screen h-screen grid grid-cols-8 grid-rows-6 gap-4 p-5 pointer-events-none box-border"></div>
+
+    <audio id="bgSound" src="images/mixkit-medieval-show-fanfare-announcement-226.wav" preload="auto"></audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
